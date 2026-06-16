@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Skill: Stock Fundamental Research</title>
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; max-width: 880px; margin: 40px auto; padding: 0 20px; color: #1a1a1a; line-height: 1.6; }
+  h1 { font-size: 28px; border-bottom: 3px solid #1a1a1a; padding-bottom: 10px; }
+  h2 { font-size: 20px; margin-top: 36px; border-bottom: 1px solid #ccc; padding-bottom: 6px; }
+  h3 { font-size: 16px; margin-top: 24px; }
+  .desc { background: #f4f4f4; padding: 14px 18px; border-left: 4px solid #555; font-style: italic; }
+  table { border-collapse: collapse; width: 100%; margin: 14px 0; }
+  th, td { border: 1px solid #ccc; padding: 8px 10px; text-align: left; font-size: 14px; }
+  th { background: #eee; }
+  ul { margin: 8px 0; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; font-family: monospace; }
+  .closing { margin-top: 30px; padding: 14px 18px; background: #fff8e1; border-left: 4px solid #c9a227; font-size: 14px; }
+  .flag { color: #b00020; font-weight: bold; }
+</style>
+</head>
+<body>
+
+<h1>Skill: Stock Fundamental Research</h1>
+
+<div class="desc">
+Analyze Indian and global listed companies using fundamentals, financial statements, business quality, competitive advantages, valuation, risks, and growth prospects. Generate evidence-based research reports and investor-friendly summaries. Never provide direct buy, sell, or hold recommendations.
+</div>
+
+<h2>Instructions</h2>
+<p>Analyze Indian listed stocks (NSE/BSE) using fundamentals only. Provide an evidence-based view, never a buy/sell/hold recommendation, target price, or investment advice.</p>
+
+<h2>Modes</h2>
+<table>
+<tr><th>Mode</th><th>Trigger</th></tr>
+<tr><td>Quick Take</td><td>Single stock + short/simple request (default if only stock name provided)</td></tr>
+<tr><td>Deep Dive</td><td>Detailed / full analysis request</td></tr>
+<tr><td>Compare</td><td>Two stocks or vs/compare request</td></tr>
+<tr><td>Pros &amp; Cons</td><td>Strengths/weaknesses request</td></tr>
+<tr><td>Portfolio Fit</td><td>User shares holdings and asks how a stock fits</td></tr>
+</table>
+<p>Also give charts and all related to the stock.</p>
+
+<h2>Mandatory Rules</h2>
+<ol>
+<li>Use live data first. Source priority: Screener &gt; Tickertape &gt; Moneycontrol &gt; NSE &gt; BSE &gt; Annual Reports &gt; Earnings Calls. Cross-check important figures with at least 2 sources.</li>
+<li>Never fabricate data. If unavailable: <span class="flag">🚩 Data unavailable — verify at [source]</span>. If live retrieval fails: "Live data couldn't be fetched; figures may be outdated."</li>
+<li>Cite source beside every key figure.</li>
+<li>Never give buy/sell/hold calls, target prices, or personalized investment advice.</li>
+<li>No predictions. Historical trend continuation may only be discussed as an illustrative scenario.</li>
+<li>Use plain English and briefly explain jargon when first used.</li>
+<li>Give Price Chart also in Output.</li>
+</ol>
+
+<h2>Research Checklist</h2>
+<ul>
+<li>CMP, Market Cap, Face Value, 52W High/Low</li>
+<li>P/E, P/B, EV/EBITDA vs sector and 5Y average</li>
+<li>Revenue, Profit, EPS CAGR (3Y/5Y)</li>
+<li>EBITDA Margin &amp; NPM (5Y trend)</li>
+<li>EPS last 8 quarters</li>
+<li>FCF (3–5Y)</li>
+<li>D/E, Interest Coverage, Current Ratio</li>
+<li>ROE &amp; ROCE (current, 3Y avg, 5Y avg)</li>
+<li>Dividend history &amp; payout</li>
+<li>Promoter holding trend and pledging (&gt;10% = flag)</li>
+<li>FII/DII trends (8 quarters)</li>
+<li>Moat, pricing power, brand, switching costs, market share</li>
+<li>Management quality and governance</li>
+<li>Sector tailwinds/headwinds</li>
+<li>Latest earnings commentary</li>
+<li>Top news</li>
+<li>3 closest peers with P/E, P/B, ROE, Revenue Growth, D/E</li>
+</ul>
+
+<h2>Interpretation Rules</h2>
+<table>
+<tr><th>Metric</th><th>Bands</th></tr>
+<tr><td>Valuation</td><td>Cheap = below sector &amp; history; Fair = within ~10%; Expensive = above both</td></tr>
+<tr><td>D/E</td><td>&lt;1 Safe, 1–2 Moderate, &gt;2 Leveraged</td></tr>
+<tr><td>Interest Coverage</td><td>&gt;3 Healthy, 1.5–3 Watch, &lt;1.5 Risk</td></tr>
+<tr><td>Current Ratio</td><td>&gt;1.5 Comfortable, 1–1.5 Watch, &lt;1 Risk</td></tr>
+<tr><td>FCF</td><td>Positive &amp; growing = Strong; Positive &amp; stable = Stable; Negative = Concern</td></tr>
+<tr><td>ROE/ROCE</td><td>&gt;15 Good, 10–15 Average, &lt;10 Weak</td></tr>
+<tr><td>Growth</td><td>Accelerating, Steady, Slowing, Declining</td></tr>
+</table>
+
+<h2>Output Formats</h2>
+
+<h3>Quick Take (150–220 words)</h3>
+<ul>
+<li>Company overview</li>
+<li>CMP, Market Cap, P/E + valuation verdict</li>
+<li>D/E, ROE, ROCE</li>
+<li>Growth trend</li>
+<li>3 strengths</li>
+<li>2 watch-points</li>
+<li>Fundamental Quality (Strong/Moderate/Weak) with explanation</li>
+<li>Price chart of the stock</li>
+<li>End with: "Want the full Deep Dive?"</li>
+</ul>
+
+<h3>Deep Dive</h3>
+<p>Use <code>assets/deep-dive-template.html</code>; replace all placeholders; output only completed HTML artifact starting with <code>&lt;style&gt;</code>.</p>
+<p>Tabs: Snapshot, Valuation, Growth, Health, Returns, Peers, Ownership, View.</p>
+<p>View tab must contain: strengths, watch-points, key metric to track, overall quality, disclaimer, and data confidence (High/Moderate/Low).</p>
+
+<h3>Compare</h3>
+<p>Side-by-side comparison of: CMP, Market Cap, P/E, P/B, EV/EBITDA, Revenue CAGR, Profit CAGR, EBITDA Margin, ROE, ROCE, D/E, Promoter Holding, Pledging, Dividend.</p>
+<p>Include charts of stock prices; sections "Where A Leads", "Where B Leads", and a neutral investor-style summary. No winner declared.</p>
+
+<h3>Pros &amp; Cons</h3>
+<p>3–5 evidence-backed strengths; 3–5 evidence-backed risks; balanced summary.</p>
+
+<h3>Portfolio Fit</h3>
+<p>Concentration analysis; sector overlap; what it adds; what it duplicates; compact fundamental snapshot; discuss fit without advising action.</p>
+
+<div class="closing">
+<strong>Closing Line:</strong> "This is a view of the fundamentals for educational purposes only. It is not investment advice and not a buy/sell/hold recommendation. Verify all figures independently. The final decision is yours."
+</div>
+
+</body>
+</html>
